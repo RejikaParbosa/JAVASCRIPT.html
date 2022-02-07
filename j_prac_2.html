@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Confirm box</title>
+<body>
+
+<p>This is the TEST for LIFE and DEATH</p>
+
+<button onclick="myFunction()">OK</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  let text;
+  if (confirm("Are you a Fujoshi?") == true) {
+    text = "Congo we're in the same gang!";
+  } else {
+    text = "Scram";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+</script>
+
+</body>
+</html>
+
