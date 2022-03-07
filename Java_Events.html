@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Javascript Events</title>
+</head>
+<body>
+	<button onclick="alert('I am clicked.')">Test</button>
+	<button onclick="testMethod()">Button2</button>
+	<p id='demo' onmouseover="mouseover()" onmouseout="mouseout()">Bring the cursor on me.</p>
+	
+	<script type="text/javascript">
+		function testMethod() {
+			alert("Button2 clicked.");
+		}
+		function mouseover() {
+			document.getElementById('demo').innerHTML="You are here.";
+		}
+		function mouseout() {
+			document.getElementById('demo').innerHTML ="Bring the cursor on me.";
+		}
+	</script>
+</body>
+</html>
