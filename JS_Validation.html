@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Form validation</title>
+	<style type="text/css">
+		form
+		{
+			border: 1px black solid;
+			background-color: rgb( 133, 193, 233 );
+		}
+		.error
+		{
+			 color: red;
+			 background-color: rgb(163, 228, 215);
+			 border-top: 0.5px red solid;
+			 border-bottom: 0.5px red solid;
+		}
+	</style>
+</head>
+<body>
+	<form method="post" name="signinform" onsubmit="return validateForm()">
+		<table>
+			<tr>
+				<td><label>Username:</label></td>
+				<td><input type="text" name="username" id="username"></td>
+			</tr>
+
+			<tr>
+				<td><label>Email Id:</label></td>
+				<td><input type="email" name="email_id" id="email"></td>
+			</tr>
+			
+			<tr>
+				<td>Gender:</td>
+				<td>
+					<label><input type="radio" name="gender" value="male">Male</label>
+					<label><input type="radio" name="gender" checked value="female">Female</label>
+					<label><input type="radio" name="gender" value="other">Other</label>
+				</td>
+			</tr>
+			
+			<tr>	
+				<td>Upload Photo:</td>
+				<td><input type="file" name="photo" id="photo"></td>
+			</tr>
+	
+			<tr>	
+				<td>Hobbies:</td>
+				<td>
+					<label><input type="checkbox" name="hobby" value="singing"> Singing </label>
+					<label><input type="checkbox" name="hobby" value="dancing"> Dancing </label>
+					<label><input type="checkbox" name="hobby" value="drawing"> Drawing </label>
+					<label><input type="checkbox" name="hobby" value="gaming"> Gaming </label>
+					<label><input type="checkbox" name="hobby" value="reading"> Reading </label>
+				</td>
+			</tr>
+			
+			</tr>	
+				<td>Date of Birth:</td>
+				<td><input type="date" name="dob" id="dob"></td>
+			</tr>
+			
+		
+			<tr>
+				<td><label>Password:</label></td>
+				<td><input type="password" name="password" id="password"></td>
+			</tr>
+			
+			<tr>
+				<td></td><td><input type="submit" value="Sign In" name=""></td>
+			</tr>	
+		</table>
+	</form>
+
+		<p id="errormsg" class="error"></p>
+		
+	<script type="text/javascript">
+		function validateForm(){
+			var uname = document.getElementById("username").value;
+			var email = document.getElementById("email").value;
+			var dob = document.getElementById("dob").value;
+			var photo = document.getElementById("photo").value;
+			var passwd = document.getElementById("password").value;
+
+			if(uname.length==0){
+				
+				document.getElementById("errormsg").innerHTML="User name can not be empty.";
+
+				return false;
+			}
+
+			if(email.length ==0) {
+				
+				document.getElementById("errormsg").innerHTML="Email ID can not be empty.";
+
+				return false;
+			}
+			
+			if(dob.length == 0) {
+				
+				document.getElementById("errormsg").innerHTML="Date of Birth can not be empty.";
+
+				return false;
+			}
+			
+			if(photo.length == 0) {
+				
+				document.getElementById("errormsg").innerHTML="Photo can not be empty.";
+
+				return false;
+			}
+			
+			
+			if(passwd.length == 0) {
+				
+				document.getElementById("errormsg").innerHTML="Password can not be empty.";
+
+				return false;
+			}
+			
+			if(uname.length==0 && passwd.length==0 && email.length==0)
+			{
+				document.getElementById("errormsg").innerHTML="Username, Password and Email_id can not be empty";
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
